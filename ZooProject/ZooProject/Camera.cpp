@@ -63,6 +63,19 @@ void Camera::Set(const int width, const int height, const glm::vec3& position)
     UpdateCameraVectors();
 }
 
+void Camera::Reset()
+{
+    position = startPosition;
+    yaw = YAW;
+    pitch = PITCH;
+    UpdateCameraVectors();
+}
+
+const glm::mat4& Camera::GetViewMatrix() const
+{
+    return view;
+}
+
 void Camera::UpdateCameraVectors()
 {
     // Calculate the new forward vector

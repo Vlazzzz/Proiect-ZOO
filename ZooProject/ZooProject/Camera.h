@@ -48,6 +48,10 @@ public:
     
     void Set(const int width, const int height, const glm::vec3& position);
 
+    void Reset();
+
+    const glm::mat4& GetViewMatrix() const;
+
     void UpdateCameraVectors();
 
 private:
