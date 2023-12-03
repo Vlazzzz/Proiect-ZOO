@@ -28,9 +28,23 @@ class Camera
 
 public:
 
+    
+
     Camera(const int width, const int height, const glm::vec3& position);
 
+    void MoveBackward(float distance);
+
     void MoveForward(float distance);
+
+    void MoveLeft(float distance);
+
+    void MoveRight(float distance);
+
+    void MoveUp(float distance);
+
+    void MoveDown(float distance);
+
+    void UpdateViewMatrix();
     
     void Set(const int width, const int height, const glm::vec3& position);
 

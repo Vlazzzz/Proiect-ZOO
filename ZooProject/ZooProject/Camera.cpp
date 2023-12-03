@@ -1,5 +1,10 @@
 #include "Camera.h";
 
+void Camera::MoveBackward(float distance)
+{
+    position -= forward * distance;
+}
+
 Camera::Camera(const int width, const int height, const glm::vec3& position)
 {
     startPosition = position;
@@ -9,6 +14,31 @@ Camera::Camera(const int width, const int height, const glm::vec3& position)
 void Camera::MoveForward(float distance)
 {
     position += forward * distance;
+}
+
+void Camera::MoveLeft(float distance)
+{
+    position -= right * distance;
+}
+
+void Camera::MoveRight(float distance)
+{
+    position += right * distance;
+}
+
+void Camera::MoveUp(float distance)
+{
+    position += worldUp * distance;
+}
+
+void Camera::MoveDown(float distance)
+{
+    position -= worldUp * distance;
+}
+
+void Camera::UpdateViewMatrix()
+{
+    view = glm::lookAt(position, position + forward, up);
 }
 
 void Camera::Set(const int width, const int height, const glm::vec3& position)
