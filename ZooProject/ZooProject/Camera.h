@@ -25,6 +25,11 @@ const unsigned int SCR_HEIGHT = 600;
 
 class Camera
 {
+
+public:
+
+    void UpdateCameraVectors();
+
 private:
     // Default camera values
     const float zNEAR = 0.1f;
@@ -34,6 +39,31 @@ private:
     const float FOV = 45.0f;
     glm::vec3 startPosition;
     glm::mat4 view;
+
+protected:
+    const float cameraSpeedFactor = 2.5f;
+    const float mouseSensitivity = 0.1f;
+
+    // Perspective properties
+    float zNear;
+    float zFar;
+    float FoVy;
+    int width;
+    int height;
+    bool isPerspective;
+
+    glm::vec3 position;
+    glm::vec3 forward;
+    glm::vec3 right;
+    glm::vec3 up;
+    glm::vec3 worldUp;
+
+    // Euler Angles
+    float yaw;
+    float pitch;
+
+    bool bFirstMouseMove = true;
+    float lastX = 0.f, lastY = 0.f;
 };
 
 #endif // CAMERA_H
