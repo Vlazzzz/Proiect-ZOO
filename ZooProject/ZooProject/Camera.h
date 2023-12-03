@@ -29,6 +29,8 @@ class Camera
 public:
 
     Camera(const int width, const int height, const glm::vec3& position);
+
+    void MoveForward(float distance);
     
     void Set(const int width, const int height, const glm::vec3& position);
 
