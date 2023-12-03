@@ -54,6 +54,8 @@ public:
 
     const glm::mat4 GetProjectionMatrix() const;
 
+    void Reshape(int windowWidth, int windowHeight);
+
     void UpdateCameraVectors();
 
 private:

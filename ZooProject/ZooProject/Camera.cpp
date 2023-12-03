@@ -92,6 +92,14 @@ const glm::mat4 Camera::GetProjectionMatrix() const
     return Proj;
 }
 
+void Camera::Reshape(int windowWidth, int windowHeight)
+{
+    width = windowWidth;
+    height = windowHeight;
+    // define the viewport transformation
+    glViewport(0, 0, windowWidth, windowHeight);
+}
+
 void Camera::UpdateCameraVectors()
 {
     // Calculate the new forward vector
