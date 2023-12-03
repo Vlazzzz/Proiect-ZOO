@@ -76,6 +76,22 @@ const glm::mat4& Camera::GetViewMatrix() const
     return view;
 }
 
+const glm::mat4 Camera::GetProjectionMatrix() const
+{
+    glm::mat4 Proj = glm::mat4(1);
+    if (isPerspective) {
+        float aspectRatio = ((float)(width)) / height;
+        Proj = glm::perspective(glm::radians(FoVy), aspectRatio, zNear, zFar);
+    }
+    else {
+        float scaleFactor = 2000.f;
+        Proj = glm::ortho<float>(
+            -width / scaleFactor, width / scaleFactor,
+            -height / scaleFactor, height / scaleFactor, -zFar, zFar);
+    }
+    return Proj;
+}
+
 void Camera::UpdateCameraVectors()
 {
     // Calculate the new forward vector

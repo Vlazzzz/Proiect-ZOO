@@ -52,6 +52,8 @@ public:
 
     const glm::mat4& GetViewMatrix() const;
 
+    const glm::mat4 GetProjectionMatrix() const;
+
     void UpdateCameraVectors();
 
 private:
