@@ -28,6 +28,8 @@ class Camera
 
 public:
 
+    void Set(const int width, const int height, const glm::vec3& position);
+
     void UpdateCameraVectors();
 
 private:
