@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ticket Booth
+* source:	https://sketchfab.com/3d-models/ticket-booth-7e12559eed534b5699c4262e7e1a6bb1
+* author:	daedaljs (https://sketchfab.com/daedalJS)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ticket Booth" (https://sketchfab.com/3d-models/ticket-booth-7e12559eed534b5699c4262e7e1a6bb1) by daedaljs (https://sketchfab.com/daedalJS) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
