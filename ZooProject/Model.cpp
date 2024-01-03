@@ -263,7 +263,7 @@ std::vector<Texture> Model::getTextures()
 				|| texPath.find("Map 0") != std::string::npos || texPath.find("20958_Log_Cabin_v1_diffuse") != std::string::npos
 				|| texPath.find("wood3") != std::string::npos || texPath.find("met") != std::string::npos
 				|| texPath.find("bench_diffuse") != std::string::npos || texPath.find("10445_Oak_Tree_v1_diffuse") != std::string::npos 
-				|| texPath.find("10459_White_Ash_Tree_v1_Diffuse") != std::string::npos)
+				|| texPath.find("10459_White_Ash_Tree_v1_Diffuse") != std::string::npos || texPath.find("Cat_diffuse") != std::string::npos)
 			{
 				Texture diffuse = Texture((fileDirectory + texPath).c_str(), "diffuse", loadedTex.size());
 				textures.push_back(diffuse);

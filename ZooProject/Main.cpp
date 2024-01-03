@@ -129,6 +129,7 @@ int main()
 	std::string fence4Path = "/models/fence3/fence4.gltf";
 	std::string benchPath = "/models/bench/bench.gltf";
 	std::string treePath = "/models/acacia/tree6.gltf";
+	std::string catPath = "/models/cat/cat.gltf";
 	//std::string payphonePath = "/models/payphone/payphone.gltf";
 	//std::string bearPath = "/models/bear/bear.gltf";
 	//std::string modelPath4 = "/models/monke/monkey.gltf";
@@ -145,6 +146,7 @@ int main()
 	Model fence4((parentDir + fence4Path).c_str());
 	Model bench((parentDir + benchPath).c_str());
 	Model tree((parentDir + treePath).c_str());
+	Model cat((parentDir + catPath).c_str());
 	//Model payphone((parentDir + payphonePath).c_str());
 	//Model bear((parentDir + bearPath).c_str());
 	//Model model4((parentDir + modelPath4).c_str());
@@ -1303,7 +1305,17 @@ int main()
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		tree.Draw(shaderProgram, camera); // Draw tree
 
-
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.013f, 0.013f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-2.0f, 0.0f, -4.0f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(155.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		cat.Draw(shaderProgram, camera); // Draw cat
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
