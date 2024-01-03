@@ -284,8 +284,8 @@ int main()
 		road.Draw(shaderProgram, camera); // Draw the road
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
-		scalingVector3 = glm::vec3(0.8f, 0.01f, 6.55f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(8.0f, 0.2f, -0.145f);
+		scalingVector3 = glm::vec3(0.8f, 0.01f, 10.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(8.0f, 0.2f, 0.30f);
 		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
 		shaderProgram.Activate();
@@ -453,17 +453,62 @@ int main()
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		darkFence.Draw(shaderProgram, camera); // Draw the fence
-		
+
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(0.017f, 0.017f, 0.017f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(6.6f, 0.0f, 5.6f);
+		translationVector3 = glm::vec3(5.6f, 0.0f, 6.6f);
 		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
 		rotationAngle = glm::radians(-90.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
 		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
-		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		//rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		//rotationAngle = glm::radians(-90.0f);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		darkFence.Draw(shaderProgram, camera); // Draw the fence
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.017f, 0.017f, 0.017f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(5.6f, 0.0f, 8.6f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
 		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
 		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		//rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		//rotationAngle = glm::radians(-90.0f);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		darkFence.Draw(shaderProgram, camera); // Draw the fence
+		
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.017f, 0.017f, 0.017f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(5.6f, 0.0f, 10.6f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		//rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		//rotationAngle = glm::radians(-90.0f);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		darkFence.Draw(shaderProgram, camera); // Draw the fence		
+		
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.017f, 0.017f, 0.019f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(5.6f, 0.0f, 12.8f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		//rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		//rotationAngle = glm::radians(-90.0f);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
 		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
@@ -765,6 +810,9 @@ int main()
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		darkFence.Draw(shaderProgram, camera); // Draw the fence
+
+		
+
 
 
 
@@ -1129,6 +1177,67 @@ int main()
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		fence4.Draw(shaderProgram, camera); // Draw the metallic fence
 
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.006f, 0.003f, 0.006f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(7.78f, 0.0f, 6.63f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		rotationAngle = glm::radians(180.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		fence4.Draw(shaderProgram, camera); // Draw the metallic fence
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.006f, 0.003f, 0.006f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(7.78f, 0.0f, 9.06f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		rotationAngle = glm::radians(180.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		fence4.Draw(shaderProgram, camera); // Draw the metallic fence
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.006f, 0.003f, 0.006f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(7.78f, 0.0f, 11.49f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		rotationAngle = glm::radians(180.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		fence4.Draw(shaderProgram, camera); // Draw the metallic fence
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.006f, 0.003f, 0.006f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(7.78f, 0.0f, 13.92f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		rotationAngle = glm::radians(180.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		fence4.Draw(shaderProgram, camera); // Draw the metallic fence
+
+
 
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
@@ -1211,7 +1320,7 @@ int main()
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(0.03f, 0.035f, 0.03f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(-1.0f, 0.0f, -1.0f);
+		translationVector3 = glm::vec3(-1.0f, -0.1f, -1.0f);
 		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
 		rotationAngle = glm::radians(-45.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
@@ -1223,9 +1332,9 @@ int main()
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.007f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(10.0f, 0.0f, 10.0f);
+		translationVector3 = glm::vec3(11.0f, 0.0f, 11.0f);
 		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
-		rotationAngle = glm::radians(-45.0f);
+		rotationAngle = glm::radians(-90.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
 		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
 		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
@@ -1236,6 +1345,18 @@ int main()
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.007f); // Adjust as needed for correct proportion
 		translationVector3 = glm::vec3(2.0f, 0.0f, 8.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(65.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		mainTree.Draw(shaderProgram, camera); // Draw oak tree
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.005f, 0.006f, 0.003f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-4.0f, 0.0f, 8.0f);
 		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
 		rotationAngle = glm::radians(65.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
