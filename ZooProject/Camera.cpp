@@ -48,19 +48,19 @@ void Camera::Inputs(GLFWwindow* window)
     {
         glm::vec3 newPosition = Position + speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
         // Verificare limită pe axa Z
-        if (newPosition.z > -13.27f)
+        if (newPosition.z > -8.05f)
         {
             Position = newPosition;
         }
         else
         {
-            Position.z = -13.27f;
+            Position.z = -8.05f;
         }
 
         // Verificare limită pe axa X
-        if (Position.x > 14.07f)
+        if (Position.x > 7.71f)
         {
-            Position.x = 14.07f;
+            Position.x = 7.71f;
         }
         else if (Position.x < -14.01f)
         {
@@ -72,19 +72,19 @@ void Camera::Inputs(GLFWwindow* window)
     {
         glm::vec3 newPosition = Position + speed * -glm::normalize(glm::cross(Orientation, Up));
         // Verificare limită pe axa Z
-        if (newPosition.z > -13.27f)
+        if (newPosition.z > -8.05f)
         {
             Position = newPosition;
         }
         else
         {
-            Position.z = -13.27f;
+            Position.z = -8.05f;
         }
 
         // Verificare limită pe axa X
-        if (Position.x > 14.07f)
+        if (Position.x > 7.71f)
         {
-            Position.x = 14.07f;
+            Position.x = 7.71f;
         }
         else if (Position.x < -14.01f)
         {
@@ -96,19 +96,19 @@ void Camera::Inputs(GLFWwindow* window)
     {
         glm::vec3 newPosition = Position - speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
         // Verificare limită pe axa Z
-        if (newPosition.z > -13.27f)
+        if (newPosition.z > -8.05f)
         {
             Position = newPosition;
         }
         else
         {
-            Position.z = -13.27f;
+            Position.z = -8.05f;
         }
 
         // Verificare limită pe axa X
-        if (Position.x > 14.07f)
+        if (Position.x > 7.71f)
         {
-            Position.x = 14.07f;
+            Position.x = 7.71f;
         }
         else if (Position.x < -14.01f)
         {
@@ -120,19 +120,19 @@ void Camera::Inputs(GLFWwindow* window)
     {
         glm::vec3 newPosition = Position + speed * glm::normalize(glm::cross(Orientation, Up));
         // Verificare limită pe axa Z
-        if (newPosition.z > -13.27f)
+        if (newPosition.z > -8.05f)
         {
             Position = newPosition;
         }
         else
         {
-            Position.z = -13.27f;
+            Position.z = -8.05f;
         }
 
         // Verificare limită pe axa X
-        if (Position.x > 14.07f)
+        if (Position.x > 7.71f)
         {
-            Position.x = 14.07f;
+            Position.x = 7.71f;
         }
         else if (Position.x < -14.01f)
         {
