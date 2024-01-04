@@ -110,7 +110,7 @@ int main()
 	glFrontFace(GL_CCW);
 
 	// Creates camera object
-	Camera camera(width, height, glm::vec3(-7.2f, 1.0f, 15.0f));
+	Camera camera(width, height, glm::vec3(-7.2f, 1.5f, 19.0f));
 
 
 	/*
@@ -131,6 +131,7 @@ int main()
 	std::string treePath = "/models/acacia/tree6.gltf";
 	std::string catPath = "/models/cat/cat.gltf";
 	std::string hedgePath = "/models/hedge/hedge.gltf";
+	std::string welcomeSignPath = "/models/welcome/welcomeSign.gltf";
 	//std::string payphonePath = "/models/payphone/payphone.gltf";
 	//std::string bearPath = "/models/bear/bear.gltf";
 	//std::string modelPath4 = "/models/monke/monkey.gltf";
@@ -149,6 +150,7 @@ int main()
 	Model tree((parentDir + treePath).c_str());
 	Model cat((parentDir + catPath).c_str());
 	Model hedge((parentDir + hedgePath).c_str());
+	Model welcomeSign((parentDir + welcomeSignPath).c_str());
 	//Model payphone((parentDir + payphonePath).c_str());
 	//Model bear((parentDir + bearPath).c_str());
 	//Model model4((parentDir + modelPath4).c_str());
@@ -277,8 +279,8 @@ int main()
 
 
 		glm::mat4 modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
-		glm::vec3 translationVector3 = glm::vec3(-9.0f, 0.0f, 0.3f);
-		glm::vec3 scalingVector3 = glm::vec3(0.8f, 0.01f, 10.7f); // Adjust as needed for correct proportions
+		glm::vec3 translationVector3 = glm::vec3(-9.0f, 0.0f, 0.454f);
+		glm::vec3 scalingVector3 = glm::vec3(0.8f, 0.01f, 13.7f); // Adjust as needed for correct proportions
 		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
 		shaderProgram.Activate();
@@ -833,10 +835,13 @@ int main()
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(0.004f, 0.004f, 0.004f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(-9.5f, 0.0f, 10.0f);
+		translationVector3 = glm::vec3(-10.35f, 0.0f, 11.8f);
 		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
 		rotationAngle = glm::radians(-90.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		rotationAngle = glm::radians(-10.0f);
 		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
 		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
 		shaderProgram.Activate();
@@ -1600,6 +1605,168 @@ int main()
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.04f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-10.4f, -0.1f, -14.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.04f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-5.4f, -0.1f, -14.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.04f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(1.2f, -0.1f, -14.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.06f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(8.7f, -0.1f, -14.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.06f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(14.4f, -0.1f, -7.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.1f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(14.4f, -0.1f, 4.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.08f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(6.4f, -0.1f, 14.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.06f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(0.3f, -0.1f, 14.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-11.3f, -0.1f, 14.4f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-8.4f, -0.1f, 17.4f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-6.0f, -0.1f, 17.4f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-7.0f, -0.1f, 20.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(2.5f, 2.5f, 2.5f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-3.4f, 0.0f, 5.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-33.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		welcomeSign.Draw(shaderProgram, camera); // Draw welcomeSign
+
+
+
+
+
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
