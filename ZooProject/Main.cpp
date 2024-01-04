@@ -130,6 +130,7 @@ int main()
 	std::string benchPath = "/models/bench/bench.gltf";
 	std::string treePath = "/models/acacia/tree6.gltf";
 	std::string catPath = "/models/cat/cat.gltf";
+	std::string hedgePath = "/models/hedge/hedge.gltf";
 	//std::string payphonePath = "/models/payphone/payphone.gltf";
 	//std::string bearPath = "/models/bear/bear.gltf";
 	//std::string modelPath4 = "/models/monke/monkey.gltf";
@@ -147,6 +148,7 @@ int main()
 	Model bench((parentDir + benchPath).c_str());
 	Model tree((parentDir + treePath).c_str());
 	Model cat((parentDir + catPath).c_str());
+	Model hedge((parentDir + hedgePath).c_str());
 	//Model payphone((parentDir + payphonePath).c_str());
 	//Model bear((parentDir + bearPath).c_str());
 	//Model model4((parentDir + modelPath4).c_str());
@@ -869,7 +871,7 @@ int main()
 		fence4.Draw(shaderProgram, camera); // Draw the metallic fence
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
-		scalingVector3 = glm::vec3(0.006f, 0.003f, 0.006f); // Adjust as needed for correct proportion
+		scalingVector3 = glm::vec3(0.006f, 0.003f, 0.007f); // Adjust as needed for correct proportion
 		translationVector3 = glm::vec3(-11.03f, 0.0f, 6.58f);
 		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
 		rotationAngle = glm::radians(-90.0f);
@@ -1550,6 +1552,54 @@ int main()
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		cat.Draw(shaderProgram, camera); // Draw cat
+		
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.04f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-14.4f, -0.1f, 9.6f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(155.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.04f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-14.4f, -0.1f, 3.6f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(155.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.04f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-14.4f, -0.1f, -3.4f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(155.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.013f, 0.01f, 0.04f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-14.4f, -0.1f, -10.4f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(155.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		hedge.Draw(shaderProgram, camera); // Draw hedge
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
