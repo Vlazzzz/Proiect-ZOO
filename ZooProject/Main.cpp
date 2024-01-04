@@ -135,11 +135,21 @@ int main()
 	std::string waterPath = "/models/water/water.gltf";
 	std::string reedPath = "/models/reed/reed.gltf";
 	std::string grassPath = "/models/grass/grass.gltf";
-	//std::string payphonePath = "/models/payphone/payphone.gltf";
-	//std::string bearPath = "/models/bear/bear.gltf";
-	//std::string modelPath4 = "/models/monke/monkey.gltf";
-	//std::string modelPath5 = "/models/ironfence/fence2.gltf";
+	std::string deer1Path = "/models/deer/deer.gltf";
+	std::string deer2Path = "/models/deer/deer2.gltf";
+	std::string horsePath = "/models/horse/horse.gltf";
+	std::string birdPath = "/models/bird/bird.gltf";
+	std::string mangerPath = "/models/manger/manger.gltf";
+	std::string goosePath = "/models/goose/goose.gltf";
+	std::string duckPath = "/models/duck/duck.gltf";
+	std::string bearPath = "/models/bear/bear.gltf";
+	std::string monkeyPath = "/models/monke/monkey.gltf";
+	std::string tamarinPath = "/models/tamarin/tamarin.gltf";
 	std::string mainTreePath = "/models/maintree/mainTree.gltf";
+	std::string foundation2Path = "/models/foundation2/foundation2.gltf";
+	std::string tigerPath = "/models/tiger/lion.gltf";
+	std::string lionPath = "/models/lion/lion.gltf";
+	std::string kangarooPath = "/models/kangaroo/kangaroo.gltf";
 
 	// Load in models
 	Model airplane((parentDir + planePath).c_str());
@@ -157,11 +167,21 @@ int main()
 	Model water((parentDir + waterPath).c_str());
 	Model reed((parentDir + reedPath).c_str());
 	Model grass((parentDir + grassPath).c_str());
-	//Model payphone((parentDir + payphonePath).c_str());
-	//Model bear((parentDir + bearPath).c_str());
-	//Model model4((parentDir + modelPath4).c_str());
-	//Model model5((parentDir + modelPath5).c_str());
+	Model deer1((parentDir + deer1Path).c_str());
+	Model deer2((parentDir + deer2Path).c_str());
+	Model horse((parentDir + horsePath).c_str());
+	Model bird((parentDir + birdPath).c_str());
+	Model manger((parentDir + mangerPath).c_str());
+	Model goose((parentDir + goosePath).c_str());
+	Model duck((parentDir + duckPath).c_str());
+	Model bear((parentDir + bearPath).c_str());
+	Model monkey((parentDir + monkeyPath).c_str());
 	Model mainTree((parentDir + mainTreePath).c_str());
+	Model foundation2((parentDir + foundation2Path).c_str());
+	Model tamarin((parentDir + tamarinPath).c_str());
+	Model tiger((parentDir + tigerPath).c_str());
+	Model lion((parentDir + lionPath).c_str());
+	Model kangaroo((parentDir + kangarooPath).c_str());
 
 	// Variables to create periodic event for FPS displaying
 	double prevTime = 0.0;
@@ -1469,6 +1489,54 @@ int main()
 		mainTree.Draw(shaderProgram, camera); // Draw oak tree
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.008f, 0.01f, 0.007f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(12.0f, 0.0f, -6.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		mainTree.Draw(shaderProgram, camera); // Draw oak tree
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.008f, 0.01f, 0.007f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(7.0f, 0.0f, -10.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		mainTree.Draw(shaderProgram, camera); // Draw oak tree
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.008f, 0.01f, 0.007f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(3.0f, 0.0f, -12.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(0.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		mainTree.Draw(shaderProgram, camera); // Draw oak tree
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.008f, 0.01f, 0.007f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-5.0f, 0.0f, -12.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(0.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		mainTree.Draw(shaderProgram, camera); // Draw oak tree
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.007f); // Adjust as needed for correct proportion
 		translationVector3 = glm::vec3(2.0f, 0.0f, 8.0f);
 		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -1784,6 +1852,8 @@ int main()
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		water.Draw(shaderProgram, camera); // Draw water
 
+
+
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(2.5f, 2.5f, 2.5f); // Reflect along the x-axis
 		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
@@ -1807,8 +1877,872 @@ int main()
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		reed.Draw(shaderProgram, camera); // Draw reed
-		
 
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(1.0f, 1.0f, 1.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.6f, -0.6f, -2.8f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(0.6f, -0.5f, -1.6f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(0.5f, -0.7f, -0.5f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(0.2f, -0.7f, 1.5f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(0.5f, -0.7f, 0.1f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-0.5f, -0.7f, 0.1f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-0.6f, -0.7f, -0.2f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-0.6f, -0.7f, 0.8f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-0.6f, -0.7f, -0.8f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-0.6f, -0.7f, -1.2f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-0.1f, -0.7f, -0.8f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-0.9f, -0.7f, -1.4f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-1.2f, -0.8f, 1.4f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-1.2f, -0.7f, 1.2f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(-1.2f, -0.9f, 1.0f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.2f, -0.6f, -1.2f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.1f, -0.7f, -1.4f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.3f, -0.6f, -1.0f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.5f, -0.7f, -0.6f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.1f, -0.6f, 0.2f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.3f, -0.6f, 0.5f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.5f, -0.6f, 0.8f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.1f, -0.6f, -0.2f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.2f, -0.7f, 0.1f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(8.0f, 1.0f, 8.0f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(1.6f, -0.6f, 0.3f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+
+
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.001f, 0.001f, 0.001f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(4.0f, 0.0f, 10.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		horse.Draw(shaderProgram, camera); // Draw horse
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.0005f, 0.0005f, 0.0005f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(4.7f, 0.0f, 10.9f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		horse.Draw(shaderProgram, camera); // Draw horse
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.001f, 0.001f, 0.001f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(0.0f, 0.0f, 11.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(107.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		horse.Draw(shaderProgram, camera); // Draw horse
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.02f, 0.02f, 0.02f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-5.0f, 0.0f, 11.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-75.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		deer1.Draw(shaderProgram, camera); // Draw deer
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.02f, 0.02f, 0.02f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-4.0f, 0.0f, 10.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-37.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		deer2.Draw(shaderProgram, camera); // Draw deer
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.03f, 0.03f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-1.0f, 0.0f, 7.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		deer2.Draw(shaderProgram, camera); // Draw deer
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.038f, 0.038f, 0.038f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-6.3f, 0.642f, 8.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		bird.Draw(shaderProgram, camera); // Draw bird
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.036f, 0.036f, 0.036f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(5.5f, 0.626f, -3.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		bird.Draw(shaderProgram, camera); // Draw bird
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.038f, 0.038f, 0.038f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(0.0f, 2.7f, 0.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(155.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		bird.Draw(shaderProgram, camera); // Draw bird
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.038f, 0.038f, 0.038f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-1.8f, 3.15f, -1.2f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(155.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		bird.Draw(shaderProgram, camera); // Draw bird
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.0f, 0.01f, 3.0f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-11.5f, 0.0f, 3.6f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		foundation2.Draw(shaderProgram, camera); // Draw foundation2
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.2f, 0.01f, 3.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(11.0f, 0.0f, 0.6f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		foundation2.Draw(shaderProgram, camera); // Draw foundation2
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.0f, 0.01f, 3.0f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-11.5f, 0.0f, 3.6f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		foundation2.Draw(shaderProgram, camera); // Draw foundation2
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.0f, 0.01f, 3.0f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-11.5f, 0.0f, -8.4f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		foundation2.Draw(shaderProgram, camera); // Draw foundation2
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.0f, 0.01f, 3.0f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-11.5f, 0.0f, -2.4f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		foundation2.Draw(shaderProgram, camera); // Draw foundation2
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.0f, 0.01f, 1.5f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-11.5f, 0.0f, -12.9f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		foundation2.Draw(shaderProgram, camera); // Draw foundation2
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.7f, 0.7f, 0.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-13.6f, 0.02f, -12.9f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		manger.Draw(shaderProgram, camera); // Draw manger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.7f, 0.7f, 0.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-13.6f, 0.02f, 3.9f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		manger.Draw(shaderProgram, camera); // Draw manger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.7f, 0.7f, 0.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-8.1f, 0.02f, -8.9f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		manger.Draw(shaderProgram, camera); // Draw manger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.7f, 0.7f, 0.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-0.9f, 0.02f, -8.9f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		manger.Draw(shaderProgram, camera); // Draw manger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.7f, 0.7f, 0.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(6.5f, 0.02f, -8.9f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		manger.Draw(shaderProgram, camera); // Draw manger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.7f, 0.7f, 0.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(8.13f, 0.02f, -1.0f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		manger.Draw(shaderProgram, camera); // Draw manger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.7f, 0.7f, 0.7f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(8.13f, 0.02f, 8.0f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		manger.Draw(shaderProgram, camera); // Draw manger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.015f, 0.015f, 0.015f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(8.2f, 0.02f, -8.0f);
+		//rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		//rotationAngle = glm::radians(145.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		duck.Draw(shaderProgram, camera); // Draw duck
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.015f, 0.015f, 0.015f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(8.6f, 0.02f, -5.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		duck.Draw(shaderProgram, camera); // Draw duck
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.015f, 0.015f, 0.015f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(9.0f, 0.02f, -10.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		duck.Draw(shaderProgram, camera); // Draw duck
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.015f, 0.015f, 0.015f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(10.0f, -0.2f, -12.6f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		duck.Draw(shaderProgram, camera); // Draw duck
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.015f, 0.015f, 0.015f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(11.2f, -0.2f, -12.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-70.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		duck.Draw(shaderProgram, camera); // Draw duck
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.015f, 0.015f, 0.015f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(12.6f, -0.2f, -11.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(45.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		duck.Draw(shaderProgram, camera); // Draw duck
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.03f, 0.03f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(3.6f, 0.12f, -10.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-135.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		tamarin.Draw(shaderProgram, camera); // Draw tamarin
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.03f, 0.03f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(3.35f, 0.84f, -12.6f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		tamarin.Draw(shaderProgram, camera); // Draw tamarin
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.03f, 0.03f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(0.6f, 0.12f, -11.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-45.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		tamarin.Draw(shaderProgram, camera); // Draw tamarin
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-3.6f, 0.12f, -11.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-45.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		monkey.Draw(shaderProgram, camera); // Draw monkey
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-5.6f, 0.1f, -11.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		monkey.Draw(shaderProgram, camera); // Draw monkey
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-7.6f, 0.1f, -10.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		monkey.Draw(shaderProgram, camera); // Draw monkey
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-8.6f, 1.3f, -8.9f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		monkey.Draw(shaderProgram, camera); // Draw monkey
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.007f, 0.007f, 0.007f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-4.6f, 1.3f, -8.1f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		monkey.Draw(shaderProgram, camera); // Draw monkey
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-12.4f, 0.0f, 0.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(25.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		lion.Draw(shaderProgram, camera); // draw lion
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.005f, 0.005f, 0.005f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-12.1f, 0.0f, 1.3f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(77.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		lion.Draw(shaderProgram, camera); // draw lion
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-11.0f, 0.0f, -1.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		lion.Draw(shaderProgram, camera); // draw lion
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.01f, 0.01f, 0.01f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-10.0f, 0.0f, 4.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(110.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		lion.Draw(shaderProgram, camera); // draw lion
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.3f, 0.3f, 0.3f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-10.0f, 0.0f, -8.0f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		tiger.Draw(shaderProgram, camera); // draw tiger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.3f, 0.3f, 0.3f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-12.0f, 0.0f, -12.0f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		tiger.Draw(shaderProgram, camera); // draw tiger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.23f, 0.23f, 0.23f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-9.0f, 0.0f, -5.0f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		rotationAngle = glm::radians(68.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		tiger.Draw(shaderProgram, camera); // draw tiger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.23f, 0.23f, 0.23f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-12.0f, 0.0f, -5.0f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(1.0f, 0.0f, 0.0f);
+		rotationAngle = glm::radians(-102.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		tiger.Draw(shaderProgram, camera); // draw tiger
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(12.0f, 12.0f, 12.0f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-12.0f, -5.0f, -12.0f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-90.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		kangaroo.Draw(shaderProgram, camera); // draw kangaroo
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Feeding Trough
+* source:	https://sketchfab.com/3d-models/feeding-trough-3a71a799538d47eea735793eaa2ac2c2
+* author:	dalroron (https://sketchfab.com/dalroron)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Feeding Trough" (https://sketchfab.com/3d-models/feeding-trough-3a71a799538d47eea735793eaa2ac2c2) by dalroron (https://sketchfab.com/dalroron) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

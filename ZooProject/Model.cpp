@@ -266,7 +266,13 @@ std::vector<Texture> Model::getTextures()
 				|| texPath.find("10459_White_Ash_Tree_v1_Diffuse") != std::string::npos || texPath.find("Cat_diffuse") != std::string::npos 
 				|| texPath.find("10449_Rectangular_Box_Hedge_v1_Diffuse") != std::string::npos || texPath.find("MAT_Statue_Bear_Welcome_baseColor") != std::string::npos
 				|| texPath.find("c63cabf1522cd0387becdfed9ae1586d") != std::string::npos || texPath.find("Material_Mat_baseColor") != std::string::npos
-				|| texPath.find("reedcolor") != std::string::npos)
+				|| texPath.find("reedcolor") != std::string::npos || texPath.find("12961_White-TailedDeer_diffuse") != std::string::npos
+				|| texPath.find("Musk_Deer_diff") != std::string::npos || texPath.find("Horse_v01") != std::string::npos 
+				|| texPath.find("1d4118f91670d84cb1caec5516d44c8c") != std::string::npos || texPath.find("12214_Bird_diffuse") != std::string::npos
+				|| texPath.find("Material_baseColor") != std::string::npos || texPath.find("12248_Bird_v1_diff") != std::string::npos
+				|| texPath.find("12249_Bird_v1_diff") != std::string::npos|| texPath.find("Tiger_yellow") != std::string::npos
+				|| texPath.find("Kangaroo_diff") != std::string::npos|| texPath.find("12273_Lion_Diffuse") != std::string::npos
+				|| texPath.find("13564GoldenLionTamarin_diffuse") != std::string::npos)
 			{
 				Texture diffuse = Texture((fileDirectory + texPath).c_str(), "diffuse", loadedTex.size());
 				textures.push_back(diffuse);
