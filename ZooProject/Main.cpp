@@ -134,22 +134,20 @@ int main()
 	std::string welcomeSignPath = "/models/welcome/welcomeSign.gltf";
 	std::string waterPath = "/models/water/water.gltf";
 	std::string reedPath = "/models/reed/reed.gltf";
-	std::string grassPath = "/models/grass/grass.gltf";
 	std::string deer1Path = "/models/deer/deer.gltf";
 	std::string deer2Path = "/models/deer/deer2.gltf";
 	std::string horsePath = "/models/horse/horse.gltf";
 	std::string birdPath = "/models/bird/bird.gltf";
 	std::string mangerPath = "/models/manger/manger.gltf";
-	std::string goosePath = "/models/goose/goose.gltf";
 	std::string duckPath = "/models/duck/duck.gltf";
-	std::string bearPath = "/models/bear/bear.gltf";
 	std::string monkeyPath = "/models/monke/monkey.gltf";
 	std::string tamarinPath = "/models/tamarin/tamarin.gltf";
 	std::string mainTreePath = "/models/maintree/mainTree.gltf";
 	std::string foundation2Path = "/models/foundation2/foundation2.gltf";
 	std::string tigerPath = "/models/tiger/lion.gltf";
 	std::string lionPath = "/models/lion/lion.gltf";
-	std::string kangarooPath = "/models/kangaroo/kangaroo.gltf";
+	std::string bearPath = "/models/bear/bear.gltf";
+	std::string camelPath = "/models/camel/camel.gltf";
 
 	// Load in models
 	Model airplane((parentDir + planePath).c_str());
@@ -166,22 +164,20 @@ int main()
 	Model welcomeSign((parentDir + welcomeSignPath).c_str());
 	Model water((parentDir + waterPath).c_str());
 	Model reed((parentDir + reedPath).c_str());
-	Model grass((parentDir + grassPath).c_str());
 	Model deer1((parentDir + deer1Path).c_str());
 	Model deer2((parentDir + deer2Path).c_str());
 	Model horse((parentDir + horsePath).c_str());
 	Model bird((parentDir + birdPath).c_str());
 	Model manger((parentDir + mangerPath).c_str());
-	Model goose((parentDir + goosePath).c_str());
 	Model duck((parentDir + duckPath).c_str());
-	Model bear((parentDir + bearPath).c_str());
 	Model monkey((parentDir + monkeyPath).c_str());
 	Model mainTree((parentDir + mainTreePath).c_str());
 	Model foundation2((parentDir + foundation2Path).c_str());
 	Model tamarin((parentDir + tamarinPath).c_str());
 	Model tiger((parentDir + tigerPath).c_str());
 	Model lion((parentDir + lionPath).c_str());
-	Model kangaroo((parentDir + kangarooPath).c_str());
+	Model bear((parentDir + bearPath).c_str());
+	Model camel((parentDir + camelPath).c_str());
 
 	// Variables to create periodic event for FPS displaying
 	double prevTime = 0.0;
@@ -2733,16 +2729,76 @@ int main()
 		tiger.Draw(shaderProgram, camera); // draw tiger
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
-		scalingVector3 = glm::vec3(12.0f, 12.0f, 12.0f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(-12.0f, -5.0f, -12.0f);
-		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
-		//rotationAngle = glm::radians(-90.0f);
+		scalingVector3 = glm::vec3(0.03f, 0.03f, 0.03f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(10.0f, 0.0f, 7.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(-90.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
-		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
 		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
-		kangaroo.Draw(shaderProgram, camera); // draw kangaroo
+		bear.Draw(shaderProgram, camera); // draw bear
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.027f, 0.027f, 0.027f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(9.5f, 0.0f, 9.7f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		bear.Draw(shaderProgram, camera); // draw bear
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.023f, 0.023f, 0.023f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(9.55f, 0.0f, 12.3f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(135.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		bear.Draw(shaderProgram, camera); // draw bear
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.004f, 0.0035f, 0.004f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(9.7f, 0.0f, 3.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(135.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		camel.Draw(shaderProgram, camera); // draw camel
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.004f, 0.0035f, 0.004f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(10.7f, 0.0f, -1.0f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(220.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		camel.Draw(shaderProgram, camera); // draw camel
+
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(0.0028f, 0.003f, 0.0028f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(10.7f, 0.0f, 1.5f);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(157.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		camel.Draw(shaderProgram, camera); // draw camel
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

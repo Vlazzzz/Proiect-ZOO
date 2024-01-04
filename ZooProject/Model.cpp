@@ -271,7 +271,7 @@ std::vector<Texture> Model::getTextures()
 				|| texPath.find("1d4118f91670d84cb1caec5516d44c8c") != std::string::npos || texPath.find("12214_Bird_diffuse") != std::string::npos
 				|| texPath.find("Material_baseColor") != std::string::npos || texPath.find("12248_Bird_v1_diff") != std::string::npos
 				|| texPath.find("12249_Bird_v1_diff") != std::string::npos|| texPath.find("Tiger_yellow") != std::string::npos
-				|| texPath.find("Kangaroo_diff") != std::string::npos|| texPath.find("12273_Lion_Diffuse") != std::string::npos
+				|| texPath.find("10007_Camel_v03") != std::string::npos|| texPath.find("12273_Lion_Diffuse") != std::string::npos
 				|| texPath.find("13564GoldenLionTamarin_diffuse") != std::string::npos)
 			{
 				Texture diffuse = Texture((fileDirectory + texPath).c_str(), "diffuse", loadedTex.size());

@@ -19,22 +19,22 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"13576_Tibetan_Bear_v1_l3",
+			"name":"Camel",
 			"rotation":[
-				0.021762827411293983,
-				0.9812285900115967,
-				0.014940185472369194,
-				0.1910332590341568
+				-0.025491217151284218,
+				0,
+				0,
+				0.9996750354766846
 			],
 			"scale":[
-				0.020449062809348106,
-				0.020449062809348106,
-				0.020449064671993256
+				0.2934250831604004,
+				0.2934250831604004,
+				0.2934250831604004
 			],
 			"translation":[
-				0.7185848355293274,
-				-0.14413252472877502,
-				2.9950637817382812
+				0,
+				-4.668150424957275,
+				0
 			]
 		}
 	],
@@ -49,14 +49,10 @@
 					"specularFactor":0
 				}
 			},
-			"name":"Bear_mat",
-			"normalTexture":{
-				"index":0,
-				"scale":0
-			},
+			"name":"10007_Camel_v03",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
-					"index":1
+					"index":0
 				},
 				"metallicFactor":0,
 				"roughnessFactor":0.8999999761581421
@@ -65,7 +61,7 @@
 	],
 	"meshes":[
 		{
-			"name":"13576_Tibetan_Bear_v1_l3",
+			"name":"Camel",
 			"primitives":[
 				{
 					"attributes":{
@@ -83,83 +79,74 @@
 		{
 			"sampler":0,
 			"source":0
-		},
-		{
-			"sampler":0,
-			"source":1
 		}
 	],
 	"images":[
 		{
 			"mimeType":"image/jpeg",
-			"name":"Tibetan_Bear_bump",
-			"uri":"Tibetan_Bear_bump.jpg"
-		},
-		{
-			"mimeType":"image/jpeg",
-			"name":"Tibetan_bear_diffuse",
-			"uri":"Tibetan_bear_diffuse.jpg"
+			"name":"10007_Camel_v03",
+			"uri":"10007_Camel_v03.jpg"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":51964,
+			"count":38274,
 			"max":[
-				14.057999610900879,
-				46.97990036010742,
-				44.41849899291992
+				96.23290252685547,
+				624.2930297851562,
+				362.5545959472656
 			],
 			"min":[
-				-14.057999610900879,
-				0.3046000003814697,
-				-29.17609977722168
+				-95.17150115966797,
+				0.0019000000320374966,
+				-337.7735900878906
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":51964,
+			"count":38274,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":51964,
+			"count":38274,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":296064,
+			"count":213696,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":623568,
+			"byteLength":459288,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":623568,
-			"byteOffset":623568,
+			"byteLength":459288,
+			"byteOffset":459288,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":415712,
-			"byteOffset":1247136,
+			"byteLength":306192,
+			"byteOffset":918576,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":592128,
-			"byteOffset":1662848,
+			"byteLength":427392,
+			"byteOffset":1224768,
 			"target":34963
 		}
 	],
@@ -171,8 +158,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":2254976,
-			"uri":"bear.bin"
+			"byteLength":1652160,
+			"uri":"camel.bin"
 		}
 	]
 }
