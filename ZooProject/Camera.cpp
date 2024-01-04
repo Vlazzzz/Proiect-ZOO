@@ -35,22 +35,33 @@ void Camera::Matrix(Shader& shader, const char* uniform)
 void Camera::Inputs(GLFWwindow* window)
 {
     // Handles key inputs
+    // Handles key inputs
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
     {
-        Position += speed * Orientation;
+        // Mutã camera înainte pe axa Z
+        Position += speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
     }
+
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
     {
+        // Mutã camera la stânga pe axa X
         Position += speed * -glm::normalize(glm::cross(Orientation, Up));
     }
+
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
     {
-        Position += speed * -Orientation;
+        // Mutã camera înapoi pe axa Z
+        Position -= speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
     }
+
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
     {
+        // Mutã camera la dreapta pe axa X
         Position += speed * glm::normalize(glm::cross(Orientation, Up));
     }
+
+    // Fixeazã coordonata y la 1.4f
+    Position.y = 1.4f;
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
     {
         Position += speed * Up;
