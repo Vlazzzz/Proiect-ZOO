@@ -132,6 +132,9 @@ int main()
 	std::string catPath = "/models/cat/cat.gltf";
 	std::string hedgePath = "/models/hedge/hedge.gltf";
 	std::string welcomeSignPath = "/models/welcome/welcomeSign.gltf";
+	std::string waterPath = "/models/water/water.gltf";
+	std::string reedPath = "/models/reed/reed.gltf";
+	std::string grassPath = "/models/grass/grass.gltf";
 	//std::string payphonePath = "/models/payphone/payphone.gltf";
 	//std::string bearPath = "/models/bear/bear.gltf";
 	//std::string modelPath4 = "/models/monke/monkey.gltf";
@@ -151,6 +154,9 @@ int main()
 	Model cat((parentDir + catPath).c_str());
 	Model hedge((parentDir + hedgePath).c_str());
 	Model welcomeSign((parentDir + welcomeSignPath).c_str());
+	Model water((parentDir + waterPath).c_str());
+	Model reed((parentDir + reedPath).c_str());
+	Model grass((parentDir + grassPath).c_str());
 	//Model payphone((parentDir + payphonePath).c_str());
 	//Model bear((parentDir + bearPath).c_str());
 	//Model model4((parentDir + modelPath4).c_str());
@@ -1762,10 +1768,46 @@ int main()
 		shaderProgram.Activate();
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
 		welcomeSign.Draw(shaderProgram, camera); // Draw welcomeSign
+		
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.5f, 0.1f, 3.5f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(3.0f, 0.0f, -3.0f);
+		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		rotationAxis = glm::vec3(0.0f, 1.0f, 0.0f);
+		rotationAngle = glm::radians(90.0f);
+		modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		water.Draw(shaderProgram, camera); // Draw water
 
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(2.5f, 2.5f, 2.5f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(3.7f, -0.3f, -4.7f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
 
-
-
+		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
+		scalingVector3 = glm::vec3(3.5f, 3.0f, 2.5f); // Reflect along the x-axis
+		modelMatrix3 = glm::scale(modelMatrix3, scalingVector3);
+		translationVector3 = glm::vec3(2.6f, -0.3f, -4.8f);
+		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
+		//rotationAngle = glm::radians(-180.0f);
+		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
+		//modelMatrix3 = glm::rotate(modelMatrix3, rotationAngle, rotationAxis);
+		shaderProgram.Activate();
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMatrix3));
+		reed.Draw(shaderProgram, camera); // Draw reed
+		
 
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

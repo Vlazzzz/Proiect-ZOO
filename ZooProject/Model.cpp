@@ -264,7 +264,9 @@ std::vector<Texture> Model::getTextures()
 				|| texPath.find("wood3") != std::string::npos || texPath.find("met") != std::string::npos
 				|| texPath.find("bench_diffuse") != std::string::npos || texPath.find("10445_Oak_Tree_v1_diffuse") != std::string::npos 
 				|| texPath.find("10459_White_Ash_Tree_v1_Diffuse") != std::string::npos || texPath.find("Cat_diffuse") != std::string::npos 
-				|| texPath.find("10449_Rectangular_Box_Hedge_v1_Diffuse") != std::string::npos || texPath.find("MAT_Statue_Bear_Welcome_baseColor") != std::string::npos)
+				|| texPath.find("10449_Rectangular_Box_Hedge_v1_Diffuse") != std::string::npos || texPath.find("MAT_Statue_Bear_Welcome_baseColor") != std::string::npos
+				|| texPath.find("c63cabf1522cd0387becdfed9ae1586d") != std::string::npos || texPath.find("Material_Mat_baseColor") != std::string::npos
+				|| texPath.find("reedcolor") != std::string::npos)
 			{
 				Texture diffuse = Texture((fileDirectory + texPath).c_str(), "diffuse", loadedTex.size());
 				textures.push_back(diffuse);
