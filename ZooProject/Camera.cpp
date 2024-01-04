@@ -1,4 +1,4 @@
-#include"Camera.h"
+ï»¿#include"Camera.h"
 
 
 
@@ -30,37 +30,116 @@ void Camera::Matrix(Shader& shader, const char* uniform)
 	glUniformMatrix4fv(glGetUniformLocation(shader.ID, uniform), 1, GL_FALSE, glm::value_ptr(cameraMatrix));
 }
 
+void Camera::PrintPosition() const
+{
+    std::cout << "Camera Position: (" << Position.x << ", " << Position.y << ", " << Position.z << ")\n";
+}
 
 
 void Camera::Inputs(GLFWwindow* window)
 {
     // Handles key inputs
-    // Handles key inputs
+    if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
+    {
+        // La apÄƒsarea tastei 'P', afiÈ™eazÄƒ coordonatele camerei
+        PrintPosition();
+    }
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
     {
-        // Mutã camera înainte pe axa Z
-        Position += speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
+        glm::vec3 newPosition = Position + speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
+        // Verificare limitÄƒ pe axa Z
+        if (newPosition.z > -13.27f)
+        {
+            Position = newPosition;
+        }
+        else
+        {
+            Position.z = -13.27f;
+        }
+
+        // Verificare limitÄƒ pe axa X
+        if (Position.x > 14.07f)
+        {
+            Position.x = 14.07f;
+        }
+        else if (Position.x < -14.01f)
+        {
+            Position.x = -14.01f;
+        }
     }
 
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
     {
-        // Mutã camera la stânga pe axa X
-        Position += speed * -glm::normalize(glm::cross(Orientation, Up));
+        glm::vec3 newPosition = Position + speed * -glm::normalize(glm::cross(Orientation, Up));
+        // Verificare limitÄƒ pe axa Z
+        if (newPosition.z > -13.27f)
+        {
+            Position = newPosition;
+        }
+        else
+        {
+            Position.z = -13.27f;
+        }
+
+        // Verificare limitÄƒ pe axa X
+        if (Position.x > 14.07f)
+        {
+            Position.x = 14.07f;
+        }
+        else if (Position.x < -14.01f)
+        {
+            Position.x = -14.01f;
+        }
     }
 
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
     {
-        // Mutã camera înapoi pe axa Z
-        Position -= speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
+        glm::vec3 newPosition = Position - speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
+        // Verificare limitÄƒ pe axa Z
+        if (newPosition.z > -13.27f)
+        {
+            Position = newPosition;
+        }
+        else
+        {
+            Position.z = -13.27f;
+        }
+
+        // Verificare limitÄƒ pe axa X
+        if (Position.x > 14.07f)
+        {
+            Position.x = 14.07f;
+        }
+        else if (Position.x < -14.01f)
+        {
+            Position.x = -14.01f;
+        }
     }
 
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
     {
-        // Mutã camera la dreapta pe axa X
-        Position += speed * glm::normalize(glm::cross(Orientation, Up));
-    }
+        glm::vec3 newPosition = Position + speed * glm::normalize(glm::cross(Orientation, Up));
+        // Verificare limitÄƒ pe axa Z
+        if (newPosition.z > -13.27f)
+        {
+            Position = newPosition;
+        }
+        else
+        {
+            Position.z = -13.27f;
+        }
 
-    // Fixeazã coordonata y la 1.4f
+        // Verificare limitÄƒ pe axa X
+        if (Position.x > 14.07f)
+        {
+            Position.x = 14.07f;
+        }
+        else if (Position.x < -14.01f)
+        {
+            Position.x = -14.01f;
+        }
+    }
+    // FixeazÄƒ coordonata y la 1.4f
     Position.y = 1.4f;
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
     {
