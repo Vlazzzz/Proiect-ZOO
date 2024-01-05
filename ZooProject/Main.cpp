@@ -1,7 +1,5 @@
-//------- Ignore this ----------
 #include<filesystem>
 namespace fs = std::filesystem;
-//------------------------------
 
 #include"Model.h"
 #include"ModelsManager.h"
@@ -16,14 +14,13 @@ const unsigned int height = 800;
 
 float skyboxVertices[] =
 {
-	//   Coordinates
-	-1.0f, -1.0f,  1.0f,//        7--------6
-	 1.0f, -1.0f,  1.0f,//       /|       /|
-	 1.0f, -1.0f, -1.0f,//      4--------5 |
-	-1.0f, -1.0f, -1.0f,//      | |      | |
-	-1.0f,  1.0f,  1.0f,//      | 3------|-2
-	 1.0f,  1.0f,  1.0f,//      |/       |/
-	 1.0f,  1.0f, -1.0f,//      0--------1
+	-1.0f, -1.0f,  1.0f,
+	 1.0f, -1.0f,  1.0f,
+	 1.0f, -1.0f, -1.0f,
+	-1.0f, -1.0f, -1.0f,
+	-1.0f,  1.0f,  1.0f,
+	 1.0f,  1.0f,  1.0f,
+	 1.0f,  1.0f, -1.0f,
 	-1.0f,  1.0f, -1.0f
 };
 
@@ -49,22 +46,13 @@ unsigned int skyboxIndices[] =
 	6, 2, 3
 };
 
-unsigned int foundationIndices[] = {
-	0, 1, 2, // Triangle 1
-	2, 3, 0  // Triangle 2
-};
-
 int main()
 {
 	// Initialize GLFW
 	glfwInit();
 
-	// Tell GLFW what version of OpenGL we are using 
-	// In this case we are using OpenGL 3.3
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	// Tell GLFW we are using the CORE profile
-	// So that means we only have the modern functions
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create a GLFWwindow object of 800 by 800 pixels, naming it "YoutubeOpenGL"
@@ -109,16 +97,8 @@ int main()
 	// Uses counter clock-wise standard
 	glFrontFace(GL_CCW);
 
-	// Creates camera object
 	Camera camera(width, height, glm::vec3(-7.2f, 1.5f, 19.0f));
 
-
-	/*
-	* I'm doing this relative path thing in order to centralize all the resources into one folder and not
-	* duplicate them between tutorial folders. You can just copy paste the resources from the 'Resources'
-	* folder and then give a relative path from this folder to whatever resource you want to get to.
-	* Also note that this requires C++17, so go to Project Properties, C/C++, Language, and select C++17
-	*/
 	std::string parentDir = (fs::current_path().fs::path::parent_path()).string();
 	std::string planePath = "/models/airplane/scene.gltf";
 	std::string foundationPath = "/models/fundatie/gr2.gltf";
