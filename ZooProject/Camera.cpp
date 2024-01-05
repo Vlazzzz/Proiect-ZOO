@@ -47,6 +47,10 @@ void Camera::Inputs(GLFWwindow* window)
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
     {
         glm::vec3 newPosition = Position + speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
+
+        // Salvare ultima poziție validă
+        glm::vec3 lastValidPosition = Position;
+
         // Verificare limită pe axa Z
         if (newPosition.z > -8.05f)
         {
@@ -62,15 +66,19 @@ void Camera::Inputs(GLFWwindow* window)
         {
             Position.x = 7.71f;
         }
-        else if (Position.x < -14.01f)
+        else if (Position.x < -8.5f && Position.z < 6.53f)
         {
-            Position.x = -14.01f;
+            // Restaurare la ultima poziție validă
+            Position = lastValidPosition;
         }
     }
 
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
     {
         glm::vec3 newPosition = Position + speed * -glm::normalize(glm::cross(Orientation, Up));
+
+        glm::vec3 lastValidPosition = Position;
+
         // Verificare limită pe axa Z
         if (newPosition.z > -8.05f)
         {
@@ -86,15 +94,18 @@ void Camera::Inputs(GLFWwindow* window)
         {
             Position.x = 7.71f;
         }
-        else if (Position.x < -14.01f)
+        else if (Position.x < -8.5f && Position.z < 6.53f)
         {
-            Position.x = -14.01f;
+            Position = lastValidPosition;
         }
     }
 
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
     {
         glm::vec3 newPosition = Position - speed * glm::normalize(glm::vec3(Orientation.x, 0.0f, Orientation.z));
+
+        glm::vec3 lastValidPosition = Position;
+
         // Verificare limită pe axa Z
         if (newPosition.z > -8.05f)
         {
@@ -110,15 +121,18 @@ void Camera::Inputs(GLFWwindow* window)
         {
             Position.x = 7.71f;
         }
-        else if (Position.x < -14.01f)
+        else if (Position.x < -8.5f && Position.z < 6.53f)
         {
-            Position.x = -14.01f;
+            Position = lastValidPosition;
         }
     }
 
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
     {
         glm::vec3 newPosition = Position + speed * glm::normalize(glm::cross(Orientation, Up));
+
+        glm::vec3 lastValidPosition = Position;
+
         // Verificare limită pe axa Z
         if (newPosition.z > -8.05f)
         {
@@ -134,11 +148,12 @@ void Camera::Inputs(GLFWwindow* window)
         {
             Position.x = 7.71f;
         }
-        else if (Position.x < -14.01f)
+        else if (Position.x < -8.5f && Position.z < 6.53f)
         {
-            Position.x = -14.01f;
+            Position = lastValidPosition;
         }
     }
+
     // Fixează coordonata y la 1.4f
     Position.y = 1.4f;
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
