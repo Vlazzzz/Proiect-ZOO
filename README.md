@@ -9,6 +9,4 @@ SIMULAREA UNEI PLIMBĂRI PRIN GRĂDINA ZOOLOGICĂ
 Membrii echipei:
        -Măndoiu Vlad Ștefan
        -Ploșniță Gabriel Valentin
-
        -Popescu Raul Andrei
- 
