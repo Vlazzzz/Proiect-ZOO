@@ -840,12 +840,9 @@ int main()
 		
 
 
-
-
-
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
-		scalingVector3 = glm::vec3(0.5f, 0.65f, 0.8f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(-12.0f, -0.55f, 11.0f);
+		scalingVector3 = glm::vec3(0.5f, 0.65f, 1.0f); // Adjust as needed for correct proportion
+		translationVector3 = glm::vec3(-12.0f, -0.55f, 10.3f);
 		//rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
 		//rotationAngle = glm::radians(-90.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
@@ -1384,7 +1381,7 @@ int main()
 
 		modelMatrix3 = glm::mat4(1.0f);  // Identity matrix for foundationMatrix
 		scalingVector3 = glm::vec3(0.015f, 0.012f, 0.009f); // Adjust as needed for correct proportion
-		translationVector3 = glm::vec3(-10.0f, 0.0f, 9.5f);
+		translationVector3 = glm::vec3(-10.0f, 0.0f, 8.5f);
 		rotationAxis = glm::vec3(0.0f, 0.0f, 1.0f);
 		rotationAngle = glm::radians(-90.0f);
 		modelMatrix3 = glm::translate(modelMatrix3, translationVector3);
